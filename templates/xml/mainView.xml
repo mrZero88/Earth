@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.2 -->
+<interface>
+    <requires lib="gtk+" version="3.20"/>
+    <object class="GtkImage" id="image1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">system-search-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image2">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">accessories-text-editor-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image3">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">view-sort-ascending-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image4">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">view-sort-descending-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image5">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="pixbuf">img/app_icon/earth16.png</property>
+    </object>
+    <object class="GtkImage" id="image6">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">mail-reply-sender-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image7">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">preferences-desktop-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image8">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">mail-reply-all-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image9">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">mail-forward-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image10">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">mail-send-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image11">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">format-justify-left-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image12">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">format-justify-center-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image13">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">format-justify-right-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image14">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">format-justify-fill-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image15">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">format-text-bold-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image16">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">format-text-italic-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image17">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">format-text-underline-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image18">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">insert-image-symbolic</property>
+    </object>
+    <object class="GtkImage" id="image19">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="icon_name">insert-link-symbolic</property>
+    </object>
+    <template class="window" parent="GtkWindow">
+        <property name="can_focus">False</property>
+        <property name="title" translatable="yes">Earth</property>
+        <property name="window_position">center</property>
+        <property name="default_width">1280</property>
+        <property name="default_height">720</property>
+        <property name="icon">img/app_icon/earth64.png</property>
+        <signal name="destroy" handler="on_destroy" swapped="no"/>
+        <signal name="show" handler="on_show" swapped="no"/>
+        <child type="titlebar">
+            <object class="GtkPaned" id="headerPaned">
+                <property name="name">headerPaned</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <child>
+                    <object class="GtkHeaderBar" id="header1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="title" translatable="yes">Earth</property>
+                        <child>
+                            <object class="GtkToggleButton" id="btnSearch">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Search</property>
+                                <property name="image">image1</property>
+                                <property name="active" bind-source="searchBar" bind-property="search-mode-enabled"
+                                          bind-flags="bidirectional|sync-create"/>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="btnSortUp">
+                                <property name="name">btnSortUp</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Sort Up</property>
+                                <property name="image">image3</property>
+                                <property name="always_show_image">True</property>
+                            </object>
+                            <packing>
+                                <property name="position">3</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="btnSortDown">
+                                <property name="name">btnSortDown</property>
+                                <property name="visible">False</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Sort Down</property>
+                                <property name="image">image4</property>
+                                <property name="always_show_image">True</property>
+                            </object>
+                            <packing>
+                                <property name="position">4</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="btnCreateEmail">
+                                <property name="name">btnCreateEmail</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Create Email</property>
+                                <property name="image">image2</property>
+                                <property name="always_show_image">True</property>
+                                <signal name="clicked" handler="on_create_email_clicked" swapped="no"/>
+                            </object>
+                            <packing>
+                                <property name="pack_type">end</property>
+                                <property name="position">2</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="btnSettings">
+                                <property name="name">btnSettings</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Settings</property>
+                                <property name="image">image7</property>
+                                <property name="always_show_image">True</property>
+                                <signal name="clicked" handler="on_settings_clicked" swapped="no"/>
+                            </object>
+                            <packing>
+                                <property name="pack_type">end</property>
+                                <property name="position">2</property>
+                            </packing>
+                        </child>
+                    </object>
+                    <packing>
+                        <property name="resize">False</property>
+                        <property name="shrink">False</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkHeaderBar" id="header2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="show_close_button">True</property>
+                        <child>
+                            <object class="GtkButton" id="btnEarth">
+                                <property name="name">btnEarth</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Earth</property>
+                                <property name="image">image5</property>
+                                <property name="always_show_image">True</property>
+                                <signal name="clicked" handler="on_earth_clicked" swapped="no"/>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkSeparator" id="s1">
+                                <property name="name">s1</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                            </object>
+                            <packing>
+                                <property name="position">2</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="btnReply">
+                                <property name="name">btnReply</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Reply</property>
+                                <property name="image">image6</property>
+                                <property name="always_show_image">True</property>
+                            </object>
+                            <packing>
+                                <property name="position">3</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="btnReplyAll">
+                                <property name="name">btnReplyAll</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Reply All</property>
+                                <property name="image">image8</property>
+                                <property name="always_show_image">True</property>
+                            </object>
+                            <packing>
+                                <property name="position">4</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="btnForward">
+                                <property name="name">btnForward</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Forward</property>
+                                <property name="image">image9</property>
+                                <property name="always_show_image">True</property>
+                            </object>
+                            <packing>
+                                <property name="position">5</property>
+                            </packing>
+                        </child>
+                        <child type="title">
+                            <object class="GtkBox" id="bFormatEmail">
+                                <property name="name">bFormatEmail</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="spacing">5</property>
+                                <child>
+                                    <object class="GtkButton" id="btnBold">
+                                        <property name="name">btnBold</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="tooltip_text" translatable="yes">Forward</property>
+                                        <property name="image">image15</property>
+                                        <property name="always_show_image">True</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="btnItalic">
+                                        <property name="name">btnItalic</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="tooltip_text" translatable="yes">Forward</property>
+                                        <property name="image">image16</property>
+                                        <property name="always_show_image">True</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">1</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="btnUnderligned">
+                                        <property name="name">btnUnderligned</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="tooltip_text" translatable="yes">Forward</property>
+                                        <property name="image">image17</property>
+                                        <property name="always_show_image">True</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">2</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkSeparator">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="btnFormatLeft">
+                                        <property name="name">btnFormatLeft</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="tooltip_text" translatable="yes">Forward</property>
+                                        <property name="image">image11</property>
+                                        <property name="always_show_image">True</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">4</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="btnFormatCenter">
+                                        <property name="name">btnFormatCenter</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="tooltip_text" translatable="yes">Forward</property>
+                                        <property name="image">image12</property>
+                                        <property name="always_show_image">True</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">5</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="btnFormatRight">
+                                        <property name="name">btnFormatRight</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="tooltip_text" translatable="yes">Forward</property>
+                                        <property name="image">image13</property>
+                                        <property name="always_show_image">True</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">6</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="btnFormatJustify">
+                                        <property name="name">btnFormatJustify</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="tooltip_text" translatable="yes">Forward</property>
+                                        <property name="image">image14</property>
+                                        <property name="always_show_image">True</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">7</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkSeparator">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">8</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="btnInsertImage">
+                                        <property name="name">btnInsertImage</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="tooltip_text" translatable="yes">Forward</property>
+                                        <property name="image">image18</property>
+                                        <property name="always_show_image">True</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">9</property>
+                                    </packing>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="btnInsertAttachment">
+                                        <property name="name">btnInsertAttachment</property>
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">True</property>
+                                        <property name="receives_default">True</property>
+                                        <property name="tooltip_text" translatable="yes">Forward</property>
+                                        <property name="image">image19</property>
+                                        <property name="always_show_image">True</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">False</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">10</property>
+                                    </packing>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="btnSend">
+                                <property name="name">btnSend</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="receives_default">True</property>
+                                <property name="tooltip_text" translatable="yes">Earth</property>
+                                <property name="image">image10</property>
+                                <property name="always_show_image">True</property>
+                            </object>
+                            <packing>
+                                <property name="pack_type">end</property>
+                                <property name="position">1</property>
+                            </packing>
+                        </child>
+                    </object>
+                    <packing>
+                        <property name="resize">True</property>
+                        <property name="shrink">False</property>
+                    </packing>
+                </child>
+            </object>
+        </child>
+        <child>
+            <object class="GtkPaned" id="contentPaned">
+                <property name="name">contentPaned</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="position" bind-source="headerPaned" bind-property="position"
+                          bind-flags="bidirectional|sync-create"/>
+                <child>
+                    <object class="GtkBox" id="master">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="orientation">vertical</property>
+                        <child>
+                            <object class="GtkBox">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <child>
+                                    <object class="GtkSearchBar" id="searchBar">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="hexpand">False</property>
+                                        <child>
+                                            <object class="GtkSearchEntry">
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="primary_icon_name">edit-find-symbolic</property>
+                                                <property name="primary_icon_activatable">False</property>
+                                                <property name="primary_icon_sensitive">False</property>
+                                            </object>
+                                        </child>
+                                        <style>
+                                            <class name="margin"/>
+                                            <class name="padding"/>
+                                        </style>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">True</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                    </packing>
+                                </child>
+                            </object>
+                            <packing>
+                                <property name="expand">False</property>
+                                <property name="fill">True</property>
+                                <property name="position">0</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkScrolledWindow" id="scrolledWindow">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="hscrollbar_policy">never</property>
+                                <property name="propagate_natural_width">True</property>
+                                <property name="propagate_natural_height">True</property>
+                                <child>
+                                    <object class="GtkViewport">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <child>
+                                            <object class="GtkListBox" id="emailList">
+                                                <property name="name">emailList</property>
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">False</property>
+                                                <signal name="key-press-event" handler="on_key_pressed" swapped="no"/>
+                                                <signal name="row-selected" handler="on_row_selected" swapped="no"/>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                            <packing>
+                                <property name="expand">True</property>
+                                <property name="fill">True</property>
+                                <property name="pack_type">end</property>
+                                <property name="position">1</property>
+                            </packing>
+                        </child>
+                    </object>
+                    <packing>
+                        <property name="resize">False</property>
+                        <property name="shrink">False</property>
+                    </packing>
+                </child>
+                <child>
+                    <object class="GtkStack" id="stackDetail">
+                        <property name="name">stackDetail</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="transition_type">crossfade</property>
+                        <child>
+                            <object class="GtkBox" id="homePage">
+                                <property name="name">homePage</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                    <object class="GtkImage">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="pixbuf">img/app_icon/earth256.png</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">True</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                    </packing>
+                                </child>
+                            </object>
+                            <packing>
+                                <property name="name">homePage</property>
+                            </packing>
+                        </child>
+                        <child>
+                            <object class="GtkBox" id="settingsPage">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="orientation">vertical</property>
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can_focus">False</property>
+                                        <property name="label" translatable="yes">Settings</property>
+                                    </object>
+                                    <packing>
+                                        <property name="expand">True</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                    </packing>
+                                </child>
+                            </object>
+                            <packing>
+                                <property name="name">settingsPage</property>
+                                <property name="position">1</property>
+                            </packing>
+                        </child>
+                    </object>
+                    <packing>
+                        <property name="resize">True</property>
+                        <property name="shrink">False</property>
+                    </packing>
+                </child>
+            </object>
+        </child>
+    </template>
+    <object class="GtkSizeGroup">
+        <property name="ignore_hidden">True</property>
+        <widgets>
+            <widget name="contentPaned"/>
+            <widget name="headerPaned"/>
+        </widgets>
+    </object>
+</interface>
